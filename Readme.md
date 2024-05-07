@@ -1,30 +1,30 @@
 
 # Introduction
-In this project I explore the global data on covid 19 to gain valuable insights into the data.
+In this project, I explore the global data on covid 19 to gain valuable insights into the data.
 
 The SQL queries can be seen here: [project_sql folder](/project_sql/)
 
 # Background
 
-In this analysis I analyze the available data on covid 19 deaths and vaccinations to unearth valuable insights into the covid infections, deaths, vacciantions, repoduction rate, etc across the globe.
-The insights will help the readers/stakeholder to understand the probability of dying in variaous courtries and regions, the likelihood of contracting infection across countries / regions, the total deaths by countries / regions, reproductions rate across the countries / regions during the pandemic, and rolling people vaccinated across different location during the pandemic. 
+In this analysis, I analyze the available data on covid 19 deaths and vaccinations to unearth valuable insights into COVID-19 infections, deaths, vaccinations, reproduction rate, etc across the globe.
+The insights will help the readers/stakeholders to understand the probability of dying in various countries and regions, the likelihood of contracting infection across countries/regions, the total deaths by countries/regions, the reproduction rate across the countries/regions during the pandemic, and rolling people vaccinated across different location during the pandemic. 
 
 The data can be downloaded from here: [Covid_deaths](), [Covid_vacci](). 
-If contains information on deaths, vaccination and others by country, regions/continents, and income grouping, from 2020 to 2023.
+It contains information on deaths, vaccination, and others by country, regions/continents, and income grouping, from 2020 to 2023.
 
 
 ### The questions I wanted to answer through SQL queries are:
 
-1. What is the likelihood of dying across different countries, countinents and by income during the pandemic?
+1. What is the likelihood of dying across different countries, continents, and by income during the pandemic?
 2. What is the likelihood of contracting infection by year during the pandemic?
-3. What is the probability of contracting covid infection by months of year during the pandemic?
-4. What is the pobability of dying by years during the pandemic/
-5. What is the probability of dying by months of year during the pandemic?
-6. What is the percentage of population infected by country, continenents and income group?
-7. What is the total number of deaths due to covid infection by country, continent and income group during the pandemic?
-8. What is the reproduction rate in the countries, continents and income groups during the pandemic?
-9. What is percentage of pupulation that is vaccianted by country, continent, and income group?
-10. What is the percentage of population vaccinated during the successive years during the pandemic?
+3. What is the probability of contracting COVID-19 infection by months of year during the pandemic?
+4. What is the probability of dying by years during the pandemic/
+5. What is the probability of dying by month of the year during the pandemic?
+6. What is the percentage of the population infected by country, continent, and income group?
+7. What is the total number of deaths due to COVID-19 infection by country, continent, and income group during the pandemic?
+8. What is the reproduction rate in the countries, continents, and income groups during the pandemic?
+9. What is the percentage of the vaccinated population by country, continent, and income group?
+10. What is the percentage of the population vaccinated during the successive years of the pandemic?
 
 # Tools Used
 For analyzing the data to answer the questions I used the following tools:
@@ -44,10 +44,10 @@ The database was created and analyzed to investigate different aspects of the da
 ### i. By Country
 
 #### a. Top 10 Countries
-To identify the top 10 countries having the highest probability of dying dues to covid, I delveloped and calculated a new metric death_percentage by country. Then I filtered out the null values in the contnent, and the total_deaths column.
+To identify the top 10 countries having the highest probability of dying due to COVID-19, I developed and calculated a new metric death_percentage by country. Then I filtered out the null values in the continent and the total_deaths column.
 
 
-For getting information on the top 10 countries I grouped the data on countries and ordered the output by descending order while for bottom 10 I ordered it by ascending order.
+For getting information on the top 10 countries I grouped the data on countries and ordered the output in descending order while for the bottom 10 I ordered it in ascending order.
 
 
 ```sql
@@ -70,18 +70,18 @@ LIMIT 10;
 
 - **Query Result**
 
-    | country     	 		|  total_cases  | 	total_deaths| death_percentage_country	|
-    |-----------------------|---------------|---------------|---------------------------|
-    | Yemen					|	11945			|	2159	|	18.07		            |
-    | Sudan					|	63993			|	5046	|	7.88		            |
-    | Syria					|	57423			|	3163	|	5.51		            |
-    | Somalia				|	27334			|	1361	|	4.98		            |
-    | Peru					|	4514682			|	221203	|	4.90		            |
-    | Egypt					|	516023			|	24830	|	4.81		            |
-    | Mexico				|	7633355			|	334336	|	4.38		            |
-    | Bosnia and Herzegovina|	403052			|	16352	|	4.06		            |
-    | Liberia				|	8090			|	294		|	3.63		            |
-    | Afghanistan			|	223846			|	7932	|	3.54		            |
+    | country     	 	|  total_cases  | 	total_deaths| death_percentage_country	|
+    |---------------------------|---------------|---------------|-------------------------------|
+    | Yemen			|	11945	|	2159	|	18.07		        |
+    | Sudan			|	63993	|	5046	|	7.88		        |
+    | Syria			|	57423	|	3163	|	5.51		        |
+    | Somalia			|	27334	|	1361	|	4.98		        |
+    | Peru			|	4514682	|	221203	|	4.90		        |
+    | Egypt			|	516023	|	24830	|	4.81		        |
+    | Mexico			|	7633355	|	334336	|	4.38		        |
+    | Bosnia and Herzegovina	|	403052	|	16352	|	4.06		        |
+    | Liberia			|	8090	|	294	|	3.63		        |
+    | Afghanistan		|	223846	|	7932	|	3.54		        |
 
 **Visual**
 
@@ -89,10 +89,10 @@ LIMIT 10;
 
 [def]: power_bi_visualizations/2_dying_likelihood_by_country_top_10.png
 
-*The bar chart visualizes the top 10 countries having the highest probability of dying due to covid.*
+*The bar chart visualizes the top 10 countries having the highest probability of dying due to COVID-19.*
 
 **Insights:**
-The output offer the following top 4 insights
+The output offers the following top 4 insights
 
 - ***Yemen:*** Yemen has the highest death percentage among the listed countries, standing at approximately 18.07%. Despite a relatively lower total number of cases, the impact of COVID-19 on Yemen's population in terms of fatalities is significant, indicating potential challenges in healthcare infrastructure and response measures.
 
@@ -108,10 +108,10 @@ These insights highlight the varying impacts of COVID-19 across different countr
 
 
 #### b. Bottom 10 Countries
-To identify the bottom 10 countries having the lowest probability of dying dues to covid, I delveloped and calculated a new metric death_percentage by country. Then I filtered out the null values in the contnent, and the total_deaths column.
+To identify the bottom 10 countries having the lowest probability of dying due to COVID, I developed and calculated a new metric death_percentage by country. Then I filtered out the null values in the continent and the total_deaths column.
 
 
-For getting the bottom 10 countries I grouped the data by countries and ordered the output by descending order while for bottom 10 I ordered it by ascending order.
+For getting the bottom 10 countries I grouped the data by countries and ordered the output in descending order while for the bottom 10 I ordered it in ascending order.
 
 
 ```sql
@@ -134,29 +134,29 @@ LIMIT 10;
 
 - **Query Result**
 
-    | country     	 				|  total_cases  | 	total_deaths| death_percentage_country	|
-    |-------------------------------|---------------|---------------|---------------------------|
-    | 	Nauru						|	5393		|		1		|	0.02	                |
-    | 	Burundi						|	54229		|		15		|	0.03		            |
-    | 	Cook Islands				|	7148		|		2		|	0.03	                |
-    | 	Bhutan						|	62690		|		21		|	0.03		            |
-    | 	Tuvalu						|	2943		|		1		|	0.03		            |
-    | 	Brunei						|	309561		|		162		|	0.05		            |
-    | 	Saint Pierre and Miquelon	|	3426		|		2		|	0.06		            |
-    |  	Tonga						|	16819		|		12		|	0.07		            |
-    | 	Singapore					|	2519716		|		1841	|	0.07		            |
-    | 	Faeroe Islands				|	34658		|		28		|	0.08		            |
+    | country     	 		|  total_cases  | total_deaths	| death_percentage_country|
+    |-----------------------------------|---------------|---------------|-------------------------|
+    | 	Nauru				|	5393	|	1	|	0.02	          |
+    | 	Burundi				|	54229	|	15	|	0.03		  |
+    | 	Cook Islands			|	7148	|	2	|	0.03	          |
+    | 	Bhutan				|	62690	|	21	|	0.03		  |
+    | 	Tuvalu				|	2943	|	1	|	0.03		  |
+    | 	Brunei				|	309561	|	162	|	0.05		  |
+    | 	Saint Pierre and Miquelon	|	3426	|	2	|	0.06		  |
+    |  	Tonga				|	16819	|	12	|	0.07		  |
+    | 	Singapore			|	2519716	|	1841	|	0.07		  |
+    | 	Faeroe Islands			|	34658	|	28	|	0.08		  |
 
 
 **Visual**
 
 ![Bottom 10 Countries ](power_bi_visualizations/2_dying_likelihood_by_country_bottom_10.png)
 
-*The bar chart visualizes 10 countries having the lowest probability of dying due to covid.*
+*The bar chart visualizes 10 countries having the lowest probability of dying due to COVID-19.*
 
 
 **Insights:**
-The output offer the following top 4 insights
+The output offers the following top 4 insights
 
 - ***Nauru:*** Nauru has the lowest death percentage among the listed countries, standing at approximately 0.0185%. With only one reported death and a relatively low total number of cases, Nauru demonstrates a remarkable ability to contain the impact of COVID-19 within its population.
 
@@ -170,12 +170,9 @@ The output offer the following top 4 insights
 
 
 
-
-
-
 ### ii. By Continent
 
-To identify the continent having the highest likelihood of dying due to covid, I developed and calculated a death_percentage metric. Then I filtered all other locations except the continents.
+To identify the continent having the highest likelihood of dying due to COVID-19, I developed and calculated a death_percentage metric. Then I filtered all other locations except the continents.
 
 Then in grouped the data one contienet and ordered it in descending order.
 
@@ -198,24 +195,24 @@ ORDER BY
 
  **Query Result**
 
-| country  | total_cases  | total_deaths  | death_pecentage_country   |
-|----------|--------------|---------------|---------------------------|
-| Africa		|	4072533		|	102595		|	12.52		            |
-| South America	|	37693506	|	704320		|	1.87		            |
-| North America	|	103436829	|	1127152		|	1.09		            |
-| Europe		|	38997490	|	399772		|	1.02		            |
-| Asia			|	99665881	|	531915		|	0.53		            |
-| Oceania		|	11527289	|	22200		|	0.19		            |   
+| country  	| total_cases  	| total_deaths  | death_pecentage_country   |
+|---------------|---------------|---------------|---------------------------|
+| Africa	|4072533	|102595		|	12.52		    |
+| South America	|37693506	|704320		|	1.87		    |
+| North America	|103436829	|1127152	|	1.09		    |
+| Europe	|38997490	|399772		|	1.02		    |
+| Asia		|99665881	|531915		|	0.53		    |
+| Oceania	|11527289	|22200		|	0.19		    |   
 
 	
 **Visual**
 
 ![Dying_probability_continent](power_bi_visualizations/2_dying_likelihood_by_continent.png)
 
-*The bar chart visualizes the probability of dying across continent,of covid-19 if infected.*
+*The bar chart visualizes the probability of dying across the continent, of covid-19 if infected.*
 
 **Insights:**
-The output offer the following top 4 insights
+The output offers the following top 4 insights
 
 - **North America:** Despite having the lowest total number of cases among the listed continents, North America has the highest death percentage at approximately 1.09%. This indicates a significant impact of COVID-19 on the population of North America, with a relatively high proportion of cases resulting in fatalities.
 
@@ -255,36 +252,36 @@ ORDER BY
 
 **Query Result**
 
-| country  		        |  total_cases  | 	total_deaths| death_percentage_country	|
-|-----------------------|---------------|---------------|---------------------------|
-| Low income		    |	2312361	    |	47962		|	2.07		|
-| Lower middle income  	|	97438372	|	1338556		|	1.37		|
-| Upper middle income 	|	244177822	|	2664652		|	1.09		|
-| High income		    |	423096646	|	2896542		|	0.68		|
+| country  	        |  total_cases  |total_deaths	| death_percentage_country	|
+|-----------------------|---------------|---------------|-------------------------------|
+| Low income		|2312361	|47962		|2.07				|
+| Lower middle income	|97438372	|1338556	|1.37				|
+| Upper middle income 	|244177822	|2664652	|1.09				|
+| High income		|423096646	|2896542	|0.68				|
 	
 **Visual**
 
 ![Dying_probability_income](power_bi_visualizations/2_dying_likelihood_by_income.png)
 
-*The bar chart visualizes the probability of dying across continent,of covid-19 if infected.*
+*The bar chart visualizes the probability of dying across income groups if infected by COVID-19.*
 
 **Insights:**
-The output offer the following top 4 insights
+The output offers the following top 4 insights
 
-- **High Income Countries:** High-income countries have the highest total number of cases among the listed income groups, with approximately 423 million cases. However, despite the high number of cases, the death percentage for high-income countries is relatively low at around 0.68%. This suggests that high-income countries have been more effective in managing the impact of COVID-19 on mortality rates compared to other income groups.
+- **High-Income Countries:** High-income countries have the highest total number of cases among the listed income groups, with approximately 423 million cases. However, despite the high number of cases, the death percentage for high-income countries is relatively low at around 0.68%. This suggests that high-income countries have been more effective in managing the impact of COVID-19 on mortality rates compared to other income groups.
 
-- **Upper Middle Income Countries:** Upper middle-income countries have a substantial total number of cases, approximately 244 million, which is the second-highest among the listed income groups. The death percentage for upper middle-income countries is around 1.09%, indicating a moderate impact of COVID-19 on mortality rates in these countries.
+- **Upper Middle-Income Countries:** Upper middle-income countries have a substantial total number of cases, approximately 244 million, which is the second-highest among the listed income groups. The death percentage for upper middle-income countries is around 1.09%, indicating a moderate impact of COVID-19 on mortality rates in these countries.
 
-- **Lower Middle Income Countries:** Lower middle-income countries have the highest total number of cases among the listed income groups, with approximately 97 million cases. The death percentage for lower middle-income countries is around 1.37%, indicating a relatively higher impact of COVID-19 on mortality rates compared to upper middle and high-income countries.
+- **Lower Middle-Income Countries:** Lower middle-income countries have the highest total number of cases among the listed income groups, with approximately 97 million cases. The death percentage for lower-middle-income countries is around 1.37%, indicating a relatively higher impact of COVID-19 on mortality rates compared to upper-middle and high-income countries.
 
-- **Low Income Countries:** Low-income countries have the lowest total number of cases among the listed income groups, with approximately 2.3 million cases. However, the death percentage for low-income countries is relatively high at around 2.07%, indicating a significant impact of COVID-19 on mortality rates despite the lower total number of cases. This suggests potential challenges in healthcare infrastructure and response measures in low-income countries.
+- **Low-Income Countries:** Low-income countries have the lowest total number of cases among the listed income groups, with approximately 2.3 million cases. However, the death percentage for low-income countries is relatively high at around 2.07%, indicating a significant impact of COVID-19 on mortality rates despite the lower total number of cases. This suggests potential challenges in healthcare infrastructure and response measures in low-income countries.
 
 
 
 
 ## 2. Likelihood of Infection By Year
 
-Here I want to analyze the tend of infection rate over the years. For doing so I developed and executed the following SQL query.
+Here I want to analyze the trend of infection rates over the years. For doing so I developed and executed the following SQL query.
 
 
 ```sql
@@ -303,22 +300,22 @@ ORDER BY
 
  **Query Result**
 
-| year 		|  infection_rate_year  |
-|-----------|-----------------------|
-| 2020	    |	0.34	            |
-| 2022  	|	0.01	            |
-| 2021  	|	0.00	            |
-| 2023	    |	0.00	            |	
+| year 	|  infection_rate_year  |
+|-------|-----------------------|
+| 2020	|	0.34	        |
+| 2022  |	0.01	        |
+| 2021  |	0.00	        |
+| 2023	|	0.00	        |	
 
 **Visual**
 
 ![infection_by_year](power_bi_visualizations/3_infection_likelihood_by_year.png)
 
-*The bar chart visualizes the probability of contracting covid infection across the years.*
+*The bar chart visualizes the probability of contracting COVID-19 infection across the years.*
 
 
 **Insights:**
-The output offer the following top 4 insights
+The output offers the following top 4 insights
 
 - **2020:** In 2020, the infection rate was relatively high at 0.342 percent. This indicates a significant spread of infections during that year, likely corresponding to the early stages of the COVID-19 pandemic when transmission rates were high and preventative measures were still being established in many parts of the world.
 
@@ -334,8 +331,8 @@ Overall, the data demonstrates a trend of declining infection rates over the yea
 
 ## 3. Likelihood of Infection By Months of Year
 
-To gain highlight the varying levels of transmission of COVID-19 across different months, with peaks and troughs reflecting fluctuations in infection rates over time the following SQL query was developed and excuted.
-In the query the "month_number" column was extractd which was later on used for sorting the "month" column for effective visualization.
+To gain highlight the varying levels of transmission of COVID-19 across different months, with peaks and troughs reflecting fluctuations in infection rates over time the following SQL query was developed and executed.
+In the query, the "month_number" column was extracted which was later on used for sorting the "month" column for effective visualization.
 
 ```sql
 SELECT
@@ -367,26 +364,26 @@ ORDER BY
 
 - **Query Result**
 
-    | year 		|  month_number |   infection_rate_monthwise    |
+    | year 	|  month_number |   infection_rate_monthwise    |
     |-----------|---------------|-------------------------------|
-    | Jan	    |	1	        |       0.114                   |
-    | Feb     	|	2           |       0.167                   |    
-    | Mar  	    |   3  	        |       0.579                   |
-    | Apr       |	4           |       0.041                   |
-    | May       |	5           |       0.018                   |
-    | Jun       |	6           |       0.004                   |
-    | Jul       |	7           |       0.004                   |
-    | Aug       |	8           |       0.010                   |
-    | Sep       |	9          	|       0.005                   |
-    | Oct       |	10         	|       0.024                   |
-    | Nov       |	11       	|       0.005                   |                    
-    | Dec       |	12     	    |       0.010                   |
+    | Jan	|1	        |       0.114                   |
+    | Feb     	|2           	|       0.167                   |    
+    | Mar  	|3  	        |       0.579                   |
+    | Apr       |4           	|       0.041                   |
+    | May       |5           	|       0.018                   |
+    | Jun       |6           	|       0.004                   |
+    | Jul       |7           	|       0.004                   |
+    | Aug       |8           	|       0.010                   |
+    | Sep       |9          	|       0.005                   |
+    | Oct       |10         	|       0.024                   |
+    | Nov       |11       	|       0.005                   |                    
+    | Dec       |12     	|       0.010                   |
 
 **Visual**
 
 ![infection_by_month](power_bi_visualizations/4_infection_likelihood_by_month.png)
 
-*The bar chart visualizes the probability of contracting covid infection by months of year.*
+*The bar chart visualizes the probability of contracting COVID-19 infection by months of year.*
 
 **Insights:**
 
@@ -405,7 +402,7 @@ Overall, the data demonstrates a trend of declining infection rates over the yea
 
 ## 4. Likelihood of Infection By Quarter of Year
 
-To gain highlight the varying levels of transmission of COVID-19 across different quarters of the the following SQL query was developed and excuted.
+To gain highlight the varying levels of transmission of COVID-19 across different quarters of the the following SQL query was developed and executed.
 
 ```sql
 SELECT
@@ -427,17 +424,17 @@ ORDER BY
     |---------------|-------------------|
     | 1	            |       0.308       |
     | 2     	    |       0.021       |    
-    | 3  	        |       0.006       |
+    | 3  	    |       0.006       |
     | 4             |       0.013       |
     
 
 **Insights:**
-The output shows that the infection rate is the highest in the the first quarter followed by the second quarter. It reaches its lowest in the third quater then rising again in the 4th quarter of the year.
+The output shows that the infection rate is the highest in the first quarter followed by the second quarter. It reaches its lowest in the third quarter then rises again in the 4th quarter of the year.
 
 
 ## 5. Probability of Dying by Year
 
-Here I want to gain insight into the probability of dying due to covid infection over the years. For doing so I developed and executed the following SQL query.
+Here I want to gain insight into the probability of dying due to COVID-19 infection over the years. For doing so I developed and executed the following SQL query.
 
 ```sql
     SELECT
@@ -455,19 +452,19 @@ Here I want to gain insight into the probability of dying due to covid infection
 
 **Query Result**
 
-| year 		|   death_rate  |
-|-----------|---------------|
-| 2020	    |	67.04	    |
-| 2022  	|	0.00	    |
-| 2021  	|	0.00	    |
-| 2023	    |	0.00	    |	
+| year 	|   death_rate  |
+|-------|---------------|
+| 2020	|67.04	    	|
+| 2022  |0.00	    	|
+| 2021  |0.00	    	|
+| 2023	|0.00	    	|	
 
 
 **Visual**
 
 ![dying_by_year](power_bi_visualizations/5_dying_likelihood_by_year.png)
 
-*The chart visualizes the probability of dying due to covid across the years.*
+*The chart visualizes the probability of dying due to COVID-19 across the years.*
 
 
 **Insights:**
@@ -486,8 +483,8 @@ Without further context, it's challenging to interpret why the death percentage 
 
 ## 6. Probability of Dying by Months of Year
 
-To gain insights into the probability of dying if infected with Covid across different months, with peaks and troughs reflecting fluctuations in death rates over time the following SQL query was developed and excuted.
-In the query the "month_number" column was extractd which was later on used for sorting the "month" column for effective visualization.
+To gain insights into the probability of dying if infected with COVID across different months, with peaks and troughs reflecting fluctuations in death rates over time the following SQL query was developed and executed.
+In the query, the "month_number" column was extracted which was later on used for sorting the "month" column for effective visualization.
 
 ```sql
 SELECT
@@ -519,20 +516,20 @@ ORDER BY
 
 - **Query Result**
 
-    | year 		|  month_number |   death_percentage_monthwise  |
+    | year 	|  month_number |   death_percentage_monthwise  |
     |-----------|---------------|-------------------------------|
-    | Jan	    |	1	        |       0.41                   |
-    | Feb     	|	2           |       0.04                   |    
-    | Mar  	    |   3  	        |       4.14                   |
-    | Apr       |	4           |       73.79                   |
-    | May       |	5           |       63.45                   |
-    | Jun       |	6           |       0.14                   |
-    | Jul       |	7           |       0.02                   |
-    | Aug       |	8           |       0.00                   |
-    | Sep       |	9          	|       0.00                   |
-    | Oct       |	10         	|       0.00                   |
-    | Nov       |	11       	|       0.00              |                    
-    | Dec       |	12     	    |       0.00                   |
+    | Jan	|	1       |       0.41                   	|
+    | Feb     	|	2       |       0.04                   	|    
+    | Mar  	|	3  	|       4.14                   	|
+    | Apr       |	4       |       73.79                   |
+    | May       |	5       |       63.45                   |
+    | Jun       |	6	|       0.14                   	|
+    | Jul       |	7       |       0.02                   	|
+    | Aug       |	8       |       0.00                   	|
+    | Sep       |	9       |       0.00                   	|
+    | Oct       |	10      |       0.00                   	|
+    | Nov       |	11      |       0.00              	|                    
+    | Dec       |	12     	|       0.00                   	|
 
 
 
@@ -540,7 +537,7 @@ ORDER BY
 
 ![death_by_month](power_bi_visualizations/6_dying_likelihood_by_month.png)
 
-*The line chart visualizes the probability of dying due to covid by months of year.*
+*The line chart visualizes the probability of dying due to COVID by months of the year.*
 
 **Insights:**
 
@@ -557,7 +554,7 @@ ORDER BY
 ## 7. Probability of Dying By Quarter of Year
 
 
-To gain highlight the varying levels of deahts due to COVID-19 across different quarters of the the following SQL query was developed and excuted.
+To highlight the varying levels of deaths due to COVID-19 across different quarters the the following SQL query was developed and executed.
 
 ```sql
 SELECT
@@ -577,9 +574,9 @@ ORDER BY
 
     | quarter_year  |   infection_rate  |
     |---------------|-------------------|
-    | Jan	        |       1.65        |
+    | Jan	    |       1.65        |
     | Feb     	    |       45.54       |    
-    | Mar  	        |       0.01        |
+    | Mar  	    |       0.01        |
     | Apr           |       0.00        |
    
 
@@ -594,10 +591,10 @@ The output shows that if infected with covid then the chances of dying are the h
 
 #### a. Top 10 Countries
 
-To identify the top 10 countries having the highest number of deaths due to covid, I filtered out the null values in the contnent, and the total_deaths column.
+To identify the top 10 countries having the highest number of deaths due to covid, I filtered out the null values in the continent, and the total_deaths column.
 
 
-For getting information on the top 10 countries I grouped the data on countries and ordered the output by descending order.
+To get information on the top 10 countries I grouped the data on countries and ordered the output in descending order.
 
 
 ```sql
@@ -618,24 +615,24 @@ LIMIT 10;
 
 - **Query Result**
 
-    | country     	 	|  total_death_count  |
-    |-------------------|---------------------|
-    | United States		|	1127152			|
-    | Brazil			|	704320			|
-    | India				|	531915			|
-    | Russia			|	399772			|
-    | Mexico			|	334336			|
-    | United Kingdom	|	228144			|
-    | Peru				|	221203			|
-    | Italy             |	190942		    |
-    | Germany			|	174979			|
-    | France			|	167985			|
+    | country     	|  total_death_count  	|
+    |-------------------|-----------------------|
+    | United States	|	1127152		|
+    | Brazil		|	704320		|
+    | India		|	531915		|
+    | Russia		|	399772		|
+    | Mexico		|	334336		|
+    | United Kingdom	|	228144		|
+    | Peru		|	221203		|
+    | Italy             |	190942		|
+    | Germany		|	174979		|
+    | France		|	167985		|
 
 **Visual**
 
 ![Top_10_Countries](power_bi_visualizations/8_death_country_top_10.png)
 
-*The bar chart visualizes the top 10 countries having the highest number of deaths due to covid.*
+*The bar chart visualizes the top 10 countries having the highest number of deaths due to COVID-19.*
 
 **Insights:**
 
@@ -653,10 +650,10 @@ LIMIT 10;
 
 #### b. Bottom 10 Countries
 
-To identify the top 10 countries having the highest number of deaths due to covid, I filtered out the null values in the contnent, and the total_deaths column.
+To identify the top 10 countries having the highest number of deaths due to covid, I filtered out the null values in the continent, and the total_deaths column.
 
 
-For getting information on the top 10 countries I grouped the data on countries and ordered the output by ascending order.
+To get information on the top 10 countries I grouped the data into countries and ordered the output in ascending order.
 
 
 ```sql
@@ -677,24 +674,24 @@ LIMIT 10;
 
 **Query Result**
 
-| country     	 	        |  total_death_count|
-|---------------------------|-------------------|
-| Nauru	                    |	1			    |
-| Tuvalu			        |	1			    |
-| Saint Pierre and Miquelon	|	2			    |
-| Cook Islands			    |	2			    |
-| Saint Barthelemy			|	5			    |
-| Wallis and Futuna	        |	8			    |
-| Montserrat				|	8			    |
-| Palau                     |	9		        |
-| Anguilla			        |	12			    |
-| Tonga			            |	12			    |
+| country     	 	    	|  total_death_count	|
+|-------------------------------|-----------------------|
+| Nauru	                    	|	1		|
+| Tuvalu			|	1		|
+| Saint Pierre and Miquelon	|	2		|
+| Cook Islands			|	2		|
+| Saint Barthelemy		|	5		|
+| Wallis and Futuna	        |	8		|
+| Montserrat			|	8		|
+| Palau                     	|	9		|
+| Anguilla			|	12		|
+| Tonga			        |	12		|
 
 **Visual**
 
 ![Top_10_Countries](power_bi_visualizations/8_death_country_bottom_10.png)
 
-*The bar chart visualizes the bottom 10 countries having the highest number of deaths due to covid.*
+*The bar chart visualizes the bottom 10 countries having the highest number of deaths due to COVID-19.*
 
 **Insights:**
 
@@ -709,7 +706,7 @@ LIMIT 10;
 
 ### ii. By Continent
 
-To identify the continent having the highest number of deaths due to covid, I filtered the location column by continent and also filtered out the null values in the continent and total_deaths column. Then I grouped the data by location. and ordered it by the total_death_count in descending order.
+To identify the continent having the highest number of deaths due to COVID-19, I filtered the location column by continent and also filtered out the null values in the continent and total_deaths column. Then I grouped the data by location. and ordered it by the total_death_count in descending order.
 
 The SQL code is:
 
@@ -734,18 +731,18 @@ ORDER BY
 
 | continent  	|  total_death_count    |
 |---------------|-----------------------|
-| Europe		|	2073819		        |
-| Asia	        |	1631990	            |
-| North America	|	1602667	            |
-| South America	|	1355475	            |
-| Africa		|	258991	            |
-| Oceania		|	28717	            |
+| Europe	|	2073819		|		
+| Asia	        |	1631990	        |
+| North America	|	1602667	        |
+| South America	|	1355475	        |
+| Africa	|	258991	        |
+| Oceania	|	28717	        |
 	
 **Visual**
 
 ![Deaths_continent](power_bi_visualizations/8_death_continent.png)
 
-*The bar chart visualizes the number of deaths across continents due to covid-19 .*
+*The bar chart visualizes the number of deaths across continents due to COVID-19.*
 
 **Insights:**
 
@@ -786,12 +783,12 @@ ORDER BY
 
 **Query Result**
 
-| location  		    |  total_death_count    |
+| location  		|  total_death_count	|
 |-----------------------|-----------------------|
-| High income		    |	2896542	            |
-| Upper middle income  	|	2664652	            |
-| Lower middle income 	|	1338556	            |
-| Low income		    |	47962	            |
+| High income		|	2896542	        |
+| Upper middle income  	|	2664652	        |
+| Lower middle income 	|	1338556	        |
+| Low income		|	47962	        |
 	
 
 **Visual**
@@ -815,13 +812,13 @@ ORDER BY
  However, this may not necessarily indicate lower mortality rates but rather could reflect underreporting, limited healthcare infrastructure, or challenges in accessing testing and medical resources in low-income settings.
 
 
-## 9. Percent of Population Infected
+## 9. Percent of the Population Infected
 
 ### i. By Country
 
 #### a. Top 10 Countries
 
-To gain insights into the top 10 countries which had the highest percentage of population infected with covid 19, I developed and excuted the following query:
+To gain insights into the top 10 countries that has the highest percentage of population infected with covid 19, I developed and executed the following query:
 
 ```sql
 SELECT 
@@ -842,18 +839,18 @@ LIMIT 10
 
 **Query Result**
 
-| country  		    |  percent_pop_infected     |
-|-------------------|---------------------------|
-| Cyprus		    |	73.76	                |
-| San Marino  	    |	72.27	                |
-| Brunei 	        |	68.94	                |
-| Austria		    |	68.03	                |
-| Faeroe Islands	|	65.25	                |
-| Slovenia		    |	63.43	                |
-| South Korea		|	62.94	                |
-| Gibraltar		    |	62.89	                |
-| Martinique		|	62.68	                |
-| Andorra		    |	60.14	                |
+| country  		|  percent_pop_infected     |
+|-----------------------|---------------------------|
+| Cyprus		|	73.76	            |
+| San Marino  	    	|	72.27	            |
+| Brunei 	        |	68.94	            |
+| Austria		|	68.03	            |
+| Faeroe Islands	|	65.25	            |
+| Slovenia		|	63.43	            |
+| South Korea		|	62.94	            |
+| Gibraltar		|	62.89	            |
+| Martinique		|	62.68	            |
+| Andorra		|	60.14	            |
     
 
 **Visual**
@@ -873,7 +870,7 @@ LIMIT 10
 
 #### b. Bottom 10 Countries
 
-To gain insights into the bottom 10 countries which has the lowest percentage of population infected with covid 19, I develped and excuted the following query
+To gain insights into the bottom 10 countries which has the lowest percentage of the population infected with covid 19, I developed and executed the following query
 
 ```sql
 SELECT 
@@ -894,24 +891,24 @@ LIMIT 10
 
 **Query Result**
 
-| country  		                |  percent_pop_infected     |
+| country  		        |  percent_pop_infected     |
 |-------------------------------|---------------------------|
-| Yemen		                    |	0.04	                |
-| Niger  	                    |	0.04	                |
-| Chad 	                        |	0.04	                |
-| Tanzania		                |	0.07	                |
-| Sierra Leone	                |	0.09	                |
-| Burkina Faso		            |	0.10	                |
-| Democratic Republic of Congo  |	0.10	                |
-| Nigeria		                |	0.12	                |
-| Sudan		                    |	0.14	                |
-| Mali		                    |	0.15	                |
+| Yemen		                |	0.04	            |
+| Niger  	                |	0.04	            |
+| Chad 	                        |	0.04	            |
+| Tanzania		        |	0.07	            |
+| Sierra Leone	                |	0.09	            |
+| Burkina Faso		        |	0.10	            |
+| Democratic Republic of Congo  |	0.10	            |
+| Nigeria		        |	0.12	            |
+| Sudan		                |	0.14	            |
+| Mali		                |	0.15	            |
     
 **Visual**
 
 ![bottom_10_countries](power_bi_visualizations/9_pop_infected_country_bottom_10.png)
 
-*The bar chart visualizes the 10 countries which has the lowest percentaage of population infected with covid.*
+*The bar chart visualizes the 10 countries which have the lowest percentage of population infected with COVID-19.*
 
 **Insights:**
 
@@ -924,7 +921,7 @@ LIMIT 10
 
 ### ii. By Continent
 
-To investigte which continents has the highest or the lowest percentage of population infected with covid, I developed and executed the follwoing SQL query.
+To investigate which continents have the highest or the lowest percentage of population infected with COVID-19, I developed and executed the following SQL query.
 
 ```sql
 SELECT 
@@ -942,20 +939,20 @@ ORDER BY
 
 **Query Result**
 
-| country  		|  percent_pop_infected |
+| country  	|  percent_pop_infected |
 |---------------|-----------------------|
-| Europe		|  73.76                |
-| Asia  	    |  68.94                |
+| Europe	|  73.76                |
+| Asia  	|  68.94                |
 | North America |  62.68                |
-| Africa		|  50.78                |
+| Africa	|  50.78                |
 | South America	|  50.59                |
-| Oceania		|  45.40                |	
+| Oceania	|  45.40                |	
         
 **Visual**
  
 ![infected_continents](power_bi_visualizations/9_pop_infected_by_continent.png)
 
-*The bar chart visualizes percentage of population of the continents infected with covid.*
+*The bar chart visualizes the percentage of the population of the continents infected with COVID-19.*
 
 **Insights:**
 
@@ -963,7 +960,7 @@ ORDER BY
 
 - **Asia:** Asia follows Europe with a relatively high infection rate of approximately 68.94%. This indicates substantial COVID-19 transmission within Asian countries, although the rate is slightly lower than in Europe.
 
-- **North America:** North America, including countries like the United States and Canada, has an infection rate of about 62.68%. While lower than Europe and Asia, this infection rate still reflects a substantial proportion of the population affected by COVID-19.
+- **North America:** North America, including countries like the United States and Canada, has an infection rate of about 62.68%. While lower than in Europe and Asia, this infection rate still reflects a substantial proportion of the population affected by COVID-19.
 
 - **Africa and South America:** Africa and South America have similar infection rates, with approximately 50.78% and 50.59% of their populations infected, respectively.
 
@@ -991,22 +988,22 @@ ORDER BY
 
 **Query Result**
 
-| location  		    |  percent_pop_infected |
+| location  		|  percent_pop_infected |
 |-----------------------|-----------------------|
-| High income		    |  33.83                |
+| High income		|  33.83                |
 | Upper middle income   |  9.67                 |
 | Lower middle income   |  2.84                 |
-| Low income		    |  0.31                 |
+| Low income		|  0.31                 |
 	
 **Visual**
 
 ![infected_continents](power_bi_visualizations/9_pop_infected_income.png)
 
-*The bar chart visualizes percentage of population by income grouping of countries infected with covid.*
+*The bar chart visualizes the percentage of the population by income grouping of countries infected with COVID-19.*
 
 **Insights**
 
-- **Income Disparities:** The data reveals significant disparities in COVID-19 infection rates based on income grouping of countries. High-income countries have the highest infection rate, followed by upper-middle-income, lower-middle-income, and low-income countries.
+- **Income Disparities:** The data reveals significant disparities in COVID-19 infection rates based on income grouping of countries. High-income countries have the highest infection rates, followed by upper-middle-income, lower-middle-income, and low-income countries.
 
 - **High-Income countries:** High-income countries have a relatively high infection rate of approximately 33.83%. Factors contributing to higher infection rates in high-income locations may include population density, international travel, and access to healthcare resources.
 
@@ -1019,11 +1016,11 @@ ORDER BY
 
 ## 10. Reproduction Rate
 
-The next question was to investigate the reproduction rate during rhe pandemic by location.
+The next question was to investigate the reproduction rate during the pandemic by location.
 
 ### i. By Country
 
-To gain insights into the reproduction rates during the pandemic by countries I developed and executed the follwoing SQL query.
+To gain insights into the reproduction rates during the pandemic by countries I developed and executed the following SQL query.
 
 ```sql
 SELECT 
@@ -1045,15 +1042,15 @@ LIMIT 10;
 
 | location  	|  avg_reproduction_rate|
 |---------------|-----------------------|
-| Spain		    | 1.15                  |
+| Spain		| 1.15                  |
 | Sweden        | 1.14                  |
 | Belgium       | 1.12                  |
 | Switzerland	| 1.11                  |
-| Germany		| 1.10                  |
-| Australia		| 1.10                  |
-| Brazil		| 1.09                  |
-| France		| 1.09                  |
-| Peru		    | 1.08                  |
+| Germany	| 1.10                  |
+| Australia	| 1.10                  |
+| Brazil	| 1.09                  |
+| France	| 1.09                  |
+| Peru		| 1.08                  |
 | United States | 1.08                  |
 
 **Visual**
@@ -1066,7 +1063,7 @@ LIMIT 10;
 
 ### ii. By Continents
 
-To gain insights into the reproduction rates during the pandemic by continents I developed and executed the follwoing SQL query.
+To gain insights into the reproduction rates during the pandemic by continents I developed and executed the following SQL query.
 
 ```sql
 SELECT 
@@ -1086,12 +1083,12 @@ ORDER BY
 
 | location  	|  percent_pop_infected |
 |---------------|-----------------------|
-| Europe		| 1.03                  |
+| Europe	| 1.03                  |
 | South America | 1.00                  |
 | Asia          | 0.95                  |
 | North America	| 0.90                  |
-| Africa		| 0.78                  |
-| Oceania		| 0.73                  |
+| Africa	| 0.78                  |
+| Oceania	| 0.73                  |
     
 
 **Visual**
@@ -1109,7 +1106,7 @@ ORDER BY
 
 ### iii. By Income Grouping
 
-There is no data on the reproduction rate in case of grouping by income. It can be confirmed by running the following SQL query.
+There is no data on the reproduction rate in the case of grouping by income. It can be confirmed by running the following SQL query.
 
 ```sql
 SELECT 
@@ -1122,13 +1119,13 @@ WHERE
     location IN ('Lower middle income', 'Low income', 'Upper middle income','High income')
 ```
 
-## 11. Percentage of Population Vaccianted by Location
+## 11. Percentage of Population Vaccinated by Location
 
 ### i. Vaccination Across Countries
 
 #### a. Top 10 Countries
 
-To find the top 10 vaccinated countries, a new metric percentage_pop_vaccinated is developed and calculated. Then the covid_deaths and covid_vacci are joined  to get information on the countries and the percentage of population vaccinated.
+To find the top 10 vaccinated countries, a new metric percentage_pop_vaccinated is developed and calculated. Then the covid_deaths and covid_vacci are joined  to get information on the countries and the percentage of the population vaccinated.
 
 ```sql
 SELECT 
@@ -1152,14 +1149,14 @@ LIMIT 10;
 
 **Query Result**
 
-| country  	            |  pecentage_pop_vaccinated |
+| country  	        |  pecentage_pop_vaccinated |
 |-----------------------|---------------------------|
-| Gibraltar		        | 126.89353367812221        |
+| Gibraltar		| 126.89353367812221        |
 | Tokelau               | 116.37612255678818        |
 | Qatar                 | 105.82706369374995        |
 | United Arab Emirates	| 103.71912792716303        |
-| Pitcairn		        | 100                       |
-| Brunei		        | 99.49042543240341         |
+| Pitcairn		| 100                       |
+| Brunei		| 99.49042543240341         |
 | Macao                 | 92.38844615782963         |
 | Singapore             | 90.8452902968979          |
 | Hong Kong             | 90.80729611424324         |
@@ -1176,14 +1173,14 @@ LIMIT 10;
 
 - **Exceptional Vaccination Coverage:** Countries such as Gibraltar, Tokelau, and Qatar have achieved remarkably high vaccination rates, with percentages exceeding 100%. This may indicate that more than the entire eligible population has received at least one dose of the vaccine. Possible reasons for this could include the inclusion of non-resident populations in vaccination statistics.
 
-- **High Vaccination Rates in Gulf States:** Several countries in the Gulf region, including the United Arab Emirates and Qatar, have achieved vaccination rates above 100%. 
+- **High Vaccination Rates in the Gulf States:** Several countries in the Gulf region, including the United Arab Emirates and Qatar, have achieved vaccination rates above 100%. 
 
 - **Vaccination Success in Small Territories:** Territories like Pitcairn, Macao, and Hong Kong have also achieved full or near-complete vaccination coverage. Their smaller populations and efficient vaccine distribution systems may have contributed to their success in vaccinating a large proportion of their residents.
 
 
-#### a. Bottome 10 Countries
+#### a. Bottom 10 Countries
 
-To find the bottom 10 vaccinated countries, a new metric percentage_pop_vaccinated is developed and calculated. Then the covid_deaths and covid_vacci are joined  to get information on the countries and the percentage of population vaccinated.
+To find the bottom 10 vaccinated countries, a new metric percentage_pop_vaccinated is developed and calculated. Then the covid_deaths and covid_vacci are joined  to get information on the countries and the percentage of the population vaccinated.
 
 ```sql
 	SELECT 
@@ -1207,14 +1204,14 @@ To find the bottom 10 vaccinated countries, a new metric percentage_pop_vaccinat
 
 **Query Result**
 
-| country  	            |  pecentage_pop_vaccinated |
+| country  	        |  pecentage_pop_vaccinated |
 |-----------------------|---------------------------|
-| Burundi		        |  0.2817856869380491       |
-| Yemen                 |  2.3571064058309483       |
+| Burundi		|  0.2817856869380491       |
+| Yemen          	|  2.3571064058309483       |
 | Haiti                 |  3.024625889177586        |
-| Papua New Guinea	    |  3.1667541686693537       |
-| Senegal		        |  8.332151413003078        |
-| Madagascar		    |  8.656090132966957        |
+| Papua New Guinea	|  3.1667541686693537       |
+| Senegal		|  8.332151413003078        |
+| Madagascar		|  8.656090132966957        |
 | Syria                 |  10.659160247829154       |
 | Gabon                 |  10.77736807538896        |
 | Congo                 |  10.955978045132428       |
@@ -1228,11 +1225,11 @@ To find the bottom 10 vaccinated countries, a new metric percentage_pop_vaccinat
 
 - **Low Vaccination Rates:** Several countries listed, including Burundi, Yemen, and Haiti, have very low percentages of their populations fully vaccinated against COVID-19. These low vaccination rates could be due to various factors such as limited access to vaccines, challenges in vaccine distribution, vaccine hesitancy, or inadequate healthcare infrastructure.
 
-- **Variability Among African Nations:** While some African countries, such as Gabon, Congo, and Cameroon, have achieved higher vaccination rates compared to others, however it still not adequate. 
+- **Variability Among African Nations:** While some African countries, such as Gabon, Congo, and Cameroon, have achieved higher vaccination rates compared to others, however it is still not adequate. 
 
 ### ii. Vaccination Across Continents
 
-To gain insights into the percentage of population vaccinated across the continents. I developed the and excecuted the following query:
+To gain insights into the percentage of the population vaccinated across the continents. I developed and executed the following query:
 
 ```sql
 SELECT 
@@ -1259,12 +1256,12 @@ SELECT
 
 | continent  	        |  people_fully_vaccinated  |
 |-----------------------|---------------------------|
-| South America		    |  77.1232336574767         |
+| South America		|  77.1232336574767         |
 | Asia                  |  73.23728449952159        |
 | Europe                |  66.23270755395134        |
 | North America	        |  65.698079760998          |
-| Oceania		        | 62.09108534274625         |
-| Africa		        |  31.340547905781857       |
+| Oceania		| 62.09108534274625         |
+| Africa		|  31.340547905781857       |
 
 **Visual**
 
@@ -1274,13 +1271,13 @@ SELECT
 
 - **Variability Across Continents:** There is considerable variation in the percentage of people fully vaccinated against COVID-19 across different continents. South America and Asia have the highest vaccination rates among the continents, with approximately 77.12% and 73.24% of their populations fully vaccinated, respectively. This indicates significant progress in vaccination efforts in these regions.
 
-- **Moderate Vaccination Rates in Europe, North America and Oceania:** Europe, North America and Oceania follow closely behind, with vaccination rates of approximately 66.23%, 65.70%, 62.09% respectively. 
+- **Moderate Vaccination Rates in Europe, North America, and Oceania:** Europe, North America, and Oceania follow closely behind, with vaccination rates of approximately 66.23%, 65.70%, and 62.09% respectively. 
 
-- **Lower Vaccination Rates in Africa and Oceania:** Africa has lower vaccination rate compared to other continents, with approximately 31.34% of its population fully vaccinated. This suggests that vaccination efforts in Africa may be progressing more slowly due to factors such as vaccine supply constraints, logistical challenges, and vaccine hesitancy.
+- **Lower Vaccination Rates in Africa and Oceania:** Africa has a lower vaccination rate compared to other continents, with approximately 31.34% of its population fully vaccinated. This suggests that vaccination efforts in Africa may be progressing more slowly due to factors such as vaccine supply constraints, logistical challenges, and vaccine hesitancy.
 
 ### iii. Vaccination Across Groups by Income
 
-To gain insights into the the percentage of population vaccinated across the grouping of countries by income, I developed and excuted the following SQL query.
+To gain insights into the the percentage of population vaccinated across the grouping of countries by income, I developed and executed the following SQL query.
 
 ```sql
 SELECT 
@@ -1319,19 +1316,19 @@ SELECT
 
 **Insights:**
 
-- **Disparities Based on Income Level:** There are significant disparities in COVID-19 vaccination rates among countries categorized by income level. Upper middle income and high-income countries have notably higher vaccination rates compared to lower middle income and low-income countries.
+- **Disparities Based on Income Level:** There are significant disparities in COVID-19 vaccination rates among countries categorized by income level. Upper-middle-income and high-income countries have notably higher vaccination rates compared to lower-middle-income and low-income countries.
 
-- **Higher Vaccination Rates in Upper Middle and High-Income Countries:** Upper middle income and high-income countries have achieved relatively high vaccination rates, with approximately 78.74% and 74.32% of their populations fully vaccinated, respectively. This suggests that these countries have had better access to vaccines, stronger healthcare infrastructure, and more robust vaccination campaigns.
+- **Higher Vaccination Rates in Upper Middle and High-Income Countries:** Upper middle-income and high-income countries have achieved relatively high vaccination rates, with approximately 78.74% and 74.32% of their populations fully vaccinated, respectively. This suggests that these countries have had better access to vaccines, stronger healthcare infrastructure, and more robust vaccination campaigns.
 
-- **Challenges in Lower Middle and Low-Income Countries:** Lower middle income and low-income countries lag behind in vaccination rates, with approximately 59.39% and 27.24% of their populations fully vaccinated, respectively. This highlights the challenges faced by these countries in accessing vaccines, implementing vaccination programs, and overcoming barriers such as vaccine hesitancy, logistical constraints, and limited healthcare resources.
+- **Challenges in Lower Middle and Low-Income Countries:** Lower middle-income and low-income countries lag in vaccination rates, with approximately 59.39% and 27.24% of their populations fully vaccinated, respectively. This highlights the challenges faced by these countries in accessing vaccines, implementing vaccination programs, and overcoming barriers such as vaccine hesitancy, logistical constraints, and limited healthcare resources.
 
 ## 12. Rolling Population Vaccinated
 
 ### i. By Continent
 
-Here I want to gain insights into the percentage of population vaccinated in each continent during the successive years during the pandemic.
+Here I want to gain insights into the percentage of the population vaccinated in each continent during the successive years of the pandemic.
 
-The following sql query was deveoped and executed;
+The following SQL query was developed and executed;
 
 ```sql
 WITH CTE AS (
@@ -1372,7 +1369,7 @@ ORDER BY
 
 **Query Result**
 
-| continent         | year      | 	percent_pop_vaccinated    |
+| continent         | year      | percent_pop_vaccinated    |
 |-------------------|-----------|---------------------------|
 | Africa            |  2021     |   9.10                    |
 | Africa            |  2022     |   24.28                   |
@@ -1412,9 +1409,9 @@ ORDER BY
 
 ### ii. By Income Groups
 
-Here I want to gain insights into the percentage of population vaccinated by income grouping the successive years during the pandemic.
+Here I want to gain insights into the percentage of the population vaccinated by income grouping the successive years during the pandemic.
 
-The following sql query was deveoped and executed; 
+The following SQL query was developed and executed; 
 
 ```sql
 SELECT
@@ -1495,17 +1492,24 @@ ORDER BY
 
 # Conclusion
 
-## Key Insights
+### Key Insights
 Based on the analysis, the key insights are:
 
-1. **Top-Paying Data Analyst Jobs**: The highest-paying jobs for data analysts that allow remote work offer a wide range of salaries, the highest at $650,000!
-2. **Skills for Top-Paying Jobs**: High-paying data analyst jobs require advanced proficiency in SQL, suggesting it’s a critical skill for earning a top salary.
-3. **Most In-Demand Skills**: SQL is also the most demanded skill in the data analyst job market, thus making it essential for job seekers.
-4. **Skills with Higher Salaries**: Specialized skills, such as SVN and Solidity, are associated with the highest average salaries, indicating a premium on niche expertise.
-5. **Optimal Skills for Job Market Value**: SQL leads in demand and offers a high average salary, positioning it as one of the most optimal skills for data analysts to learn to maximize their market value.
+1. **Probability of Dying by Location:** The probability of dying  due to COVID-19 is high in low-income countries. Continentwise Africa has the highest probability of dying if infected with covid, while Oceania has the least. This may be due to limited access to health facilities, and low levels of awareness about the precautionary measures.
+2. **Probability of Dying by Year:** The probability of dying due to covid is the highest in the year 2020. This was because the medical fraternity and the masses had limited to no knowledge of the disease in the starting year of the pandemic.
+
+3. **Probability of Contracting Covid by Location:** The likelihood of contracting COVID-19 infection is significantly high in high-income countries. This may be due to the higher population density in the major population centers in the developed world. 
+
+The infection rate in the case of Oceania is the lowest among all the continents which points to the fact that geographical location and mobility across countries play a crucial role in the infection rate.
+
+4. **Probability of Contracting Covid Infection by Year:** The probability of contracting is the highest in the year 2020. This may be because there were no precautionary protocols, COVID-19 vaccination was not introduced, and the medical treatment was not standardized.  
+
+5. **Number of Deaths by Location:** Continentwise Europe and Asia have the highest number of deaths while Africa and Oceania have the lowest. Furthermore, high-income countries had the highest number of deaths while low-income countries had the lowest. One of the reasons may be that the infection rate was the highest in the high-income countries which may have been to higher population densities of the major population centers in the developed countries. Furthermore, the high infection rate in the high-income countries may have overwhelmed the hospitals and health facilities in these countries.
+
+6. **Vaccination by Location:** The low-income countries have the lowest percentage of population infected as compared to the high or middle-income countries. This may be because the high-income countries had greater access to the vaccines or the dearth of health facilities may have contributed to lower vaccination rates.
 
 ### Closing Thoughts
 
-This project enhanced my SQL skills and provided valuable insights into the data analyst job market. The findings of the analysis serve as a guide for prioritizing skill development and job search efforts by job seekers. 
+This project enhanced my SQL skills and provided valuable insights into the COVID-19 pandemic. The insights obtained may help the stakeholders to make informed decisions. 
 
-Aspiring data analysts can better position themselves in the job market by focusing on high-demand, high-salary skills. 
+
