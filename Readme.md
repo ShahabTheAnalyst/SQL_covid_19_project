@@ -9,7 +9,7 @@ The SQL queries can be seen here: [project_sql folder](/project_sql/)
 In this analysis, I analyze the available data on covid 19 deaths and vaccinations to unearth valuable insights into COVID-19 infections, deaths, vaccinations, reproduction rate, etc across the globe.
 The insights will help the readers/stakeholders to understand the probability of dying in various countries and regions, the likelihood of contracting infection across countries/regions, the total deaths by countries/regions, the reproduction rate across the countries/regions during the pandemic, and rolling people vaccinated across different location during the pandemic. 
 
-The data can be downloaded from here: [Covid_deaths](), [Covid_vacci](). 
+The data can be downloaded from here: [Covid_deaths](https://1x1kjh-my.sharepoint.com/:x:/r/personal/kenpeter_1x1kjh_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B175CAB08-134A-4EA3-B4DE-E22DB191A56C%7D&file=covid_deaths.csv&action=default&mobileredirect=true), [Covid_vacci](https://1x1kjh-my.sharepoint.com/:x:/r/personal/kenpeter_1x1kjh_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B00E4300F-B9EA-4269-A930-7A763F9A3587%7D&file=covid_vacci.csv&action=default&mobileredirect=true). 
 It contains information on deaths, vaccination, and others by country, regions/continents, and income grouping, from 2020 to 2023.
 
 
