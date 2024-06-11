@@ -1,54 +1,56 @@
 
 # Introduction
-In this project, I explore the global data on covid 19 to gain valuable insights into the data.
-
-The SQL queries can be seen here: [project_sql folder](/project_sql/)
+In this project, I explore global data on COVID-19 to gain valuable insights. The SQL queries used in this analysis can be found in the [project_sql folder](/project_sql/)
 
 # Background
 
-In this analysis, I analyze the available data on covid 19 deaths and vaccinations to unearth valuable insights into COVID-19 infections, deaths, vaccinations, reproduction rate, etc across the globe.
-The insights will help the readers/stakeholders to understand the probability of dying in various countries and regions, the likelihood of contracting infection across countries/regions, the total deaths by countries/regions, the reproduction rate across the countries/regions during the pandemic, and rolling people vaccinated across different location during the pandemic. 
+This analysis aims to examine COVID-19 deaths and vaccinations to unearth valuable insights into infections, deaths, vaccinations, reproduction rates, and more across the globe. These insights will help readers and stakeholders understand:
 
-The data can be downloaded from here: [Covid_deaths](https://1x1kjh-my.sharepoint.com/:x:/r/personal/kenpeter_1x1kjh_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B175CAB08-134A-4EA3-B4DE-E22DB191A56C%7D&file=covid_deaths.csv&action=default&mobileredirect=true), [Covid_vacci](https://1x1kjh-my.sharepoint.com/:x:/r/personal/kenpeter_1x1kjh_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B00E4300F-B9EA-4269-A930-7A763F9A3587%7D&file=covid_vacci.csv&action=default&mobileredirect=true). 
-It contains information on deaths, vaccination, and others by country, regions/continents, and income grouping, from 2020 to 2023.
+- The probability of dying in various countries and regions.
+- The likelihood of contracting infections across countries and regions.
+- Total deaths by countries and regions.
+- The reproduction rate during the pandemic.
+- The rolling number of people vaccinated across different locations during the pandemic.
+The data can be downloaded from the following links:
 
+[Covid_deaths](https://1x1kjh-my.sharepoint.com/:x:/r/personal/kenpeter_1x1kjh_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B175CAB08-134A-4EA3-B4DE-E22DB191A56C%7D&file=covid_deaths.csv&action=default&mobileredirect=true)
+[Covid_vacci](https://1x1kjh-my.sharepoint.com/:x:/r/personal/kenpeter_1x1kjh_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B00E4300F-B9EA-4269-A930-7A763F9A3587%7D&file=covid_vacci.csv&action=default&mobileredirect=true).
 
-### The questions I wanted to answer through SQL queries are:
+The dataset includes information on deaths, vaccinations, and other metrics by country, region/continent, and income grouping from 2020 to 2023.
 
-1. What is the likelihood of dying across different countries, continents, and by income during the pandemic?
-2. What is the likelihood of contracting infection by year during the pandemic?
-3. What is the probability of contracting COVID-19 infection by months of year during the pandemic?
-4. What is the probability of dying by years during the pandemic/
-5. What is the probability of dying by month of the year during the pandemic?
-6. What is the percentage of the population infected by country, continent, and income group?
-7. What is the total number of deaths due to COVID-19 infection by country, continent, and income group during the pandemic?
-8. What is the reproduction rate in the countries, continents, and income groups during the pandemic?
-9. What is the percentage of the vaccinated population by country, continent, and income group?
-10. What is the percentage of the population vaccinated during the successive years of the pandemic?
+### Research Questions
+The analysis addresses the following questions using SQL queries:
+
+1. What is the likelihood of dying across different countries, continents, and income groups during the pandemic?
+2. What is the likelihood of contracting an infection by year during the pandemic?
+3. What is the probability of contracting a COVID-19 infection by month during the pandemic?
+4. What is the probability of dying by year during the pandemic?
+5. What is the probability of dying by month during the pandemic?
+6. What percentage of the population was infected by country, continent, and income group?
+7. What is the total number of deaths due to COVID-19 by country, continent, and income group during the pandemic?
+8. What is the reproduction rate in different countries, continents, and income groups during the pandemic?
+9. What percentage of the population was vaccinated by country, continent, and income group?
+10. What percentage of the population was vaccinated in successive years of the pandemic?
 
 # Tools Used
-For analyzing the data to answer the questions I used the following tools:
+For this analysis, the following tools were employed:
 
-- **SQL:** It allowed me to create the tables/database, import the data into the tables, and perform various operations on the data.
-- **PostgreSQL:** This database management system, was chosen for handling exploring, and analyzing the data.
-- **Microsoft Power BI:** For visualizing the output of the SQL queries.
-- **Visual Studio Code:** For executing SQL queries.
+SQL: For creating tables/databases, importing data, and performing various data operations.
+PostgreSQL: Chosen for handling, exploring, and analyzing the data.
+Microsoft Power BI: For visualizing the output of the SQL queries.
+Visual Studio Code: For executing SQL queries.
 
 # Analysis
-The database was created and analyzed to investigate different aspects of the data to answer the above-mentioned questions.:
-
-
+The database was created and analyzed to investigate different aspects of the data to answer the above-mentioned questions.
 
 ## 1. Likelihood of Dying by Location
 
 ### i. By Country
 
 #### a. Top 10 Countries
-To identify the top 10 countries having the highest probability of dying due to COVID-19, I developed and calculated a new metric death_percentage by country. Then I filtered out the null values in the continent and the total_deaths column.
+To identify the top 10 countries with the highest probability of dying due to COVID-19, I developed and calculated a new metric: death_percentage by country. I filtered out the null values in the continent and total_deaths columns.
 
-
-For getting information on the top 10 countries I grouped the data on countries and ordered the output in descending order while for the bottom 10 I ordered it in ascending order.
-
+For obtaining the information on the top 10 countries, I grouped the data by countries and ordered the output in descending order. For the bottom 10, I ordered it in ascending order.
 
 ```sql
 SELECT
@@ -60,7 +62,7 @@ FROM
     covid_deaths
 WHERE
     continent IS NOT NULL AND 
-	total_deaths IS NOT NULL
+    total_deaths IS NOT NULL
 GROUP BY
     location
 ORDER BY
@@ -89,7 +91,7 @@ LIMIT 10;
 
 [def]: power_bi_visualizations/2_dying_likelihood_by_country_top_10.png
 
-*The bar chart visualizes the top 10 countries having the highest probability of dying due to COVID-19.*
+*The bar chart visualizes the top 10 countries with the highest probability of dying due to COVID-19.*
 
 **Insights:**
 The output offers the following top 4 insights
@@ -103,16 +105,8 @@ The output offers the following top 4 insights
 - ***Somalia:*** Somalia occupies the fourth position in terms of death percentage, standing at around 4.98%. Despite challenges, including healthcare infrastructure limitations, Somalia demonstrates a lower fatality rate compared to some other countries in the dataset, indicating potential resilience and effective response measures within the country.
 These insights highlight the varying impacts of COVID-19 across different countries, influenced by factors such as healthcare infrastructure, response measures, and population demographics.
 
-
-
-
-
 #### b. Bottom 10 Countries
-To identify the bottom 10 countries having the lowest probability of dying due to COVID, I developed and calculated a new metric death_percentage by country. Then I filtered out the null values in the continent and the total_deaths column.
-
-
-For getting the bottom 10 countries I grouped the data by countries and ordered the output in descending order while for the bottom 10 I ordered it in ascending order.
-
+To identify the bottom 10 countries with the lowest probability of dying due to COVID-19, I calculated the death_percentage by country and filtered out the null values in the continent and total_deaths columns. The data was grouped by country and ordered in ascending order to determine the countries with the lowest death percentages.
 
 ```sql
 SELECT
@@ -152,7 +146,7 @@ LIMIT 10;
 
 ![Bottom 10 Countries ](power_bi_visualizations/2_dying_likelihood_by_country_bottom_10.png)
 
-*The bar chart visualizes 10 countries having the lowest probability of dying due to COVID-19.*
+*The bar chart visualizes the 10 countries with the lowest probability of dying due to COVID-19.*
 
 
 **Insights:**
@@ -166,16 +160,8 @@ The output offers the following top 4 insights
 
 - ***Bhutan:*** Bhutan occupies the fourth position in terms of low death percentage, standing at around 0.0335%. Despite a higher total number of cases compared to the previous countries listed, Bhutan's death percentage remains relatively low, suggesting effective measures in controlling the spread of the virus and minimizing fatalities.
 
-
-
-
-
 ### ii. By Continent
-
-To identify the continent having the highest likelihood of dying due to COVID-19, I developed and calculated a death_percentage metric. Then I filtered all other locations except the continents.
-
-Then in grouped the data one contienet and ordered it in descending order.
-
+To identify the continent with the highest likelihood of dying due to COVID-19, I calculated a death_percentage metric. I filtered the data to include only continent-level records and then grouped the data by continent, ordering the results in descending order.
 
 ```sql
 SELECT
@@ -229,9 +215,7 @@ The output offers the following top 4 insights
 
 
 ### iii. By Income Grouping
-
-To analyze the probability of dying due to covid in case of countries by income, I developed and calculated a death_percentage metric, filtered and grouped the data by income. 
-
+To analyze the probability of dying due to COVID-19 in countries categorized by income, I calculated a death_percentage metric and grouped the data by income level. The SQL query used for this analysis is as follows:
 
 ```sql
 SELECT
@@ -276,14 +260,11 @@ The output offers the following top 4 insights
 
 - **Low-Income Countries:** Low-income countries have the lowest total number of cases among the listed income groups, with approximately 2.3 million cases. However, the death percentage for low-income countries is relatively high at around 2.07%, indicating a significant impact of COVID-19 on mortality rates despite the lower total number of cases. This suggests potential challenges in healthcare infrastructure and response measures in low-income countries.
 
-
+These insights highlight the disparities in healthcare infrastructure and response capabilities across different income groups. High-income countries have better resources and systems to manage the pandemic effectively, resulting in lower mortality rates, while low-income countries face significant challenges that lead to higher mortality rates despite having fewer total cases.
 
 
 ## 2. Likelihood of Infection By Year
-
-Here I want to analyze the trend of infection rates over the years. For doing so I developed and executed the following SQL query.
-
-
+To analyze the trend of infection rates over the years, I executed the following SQL query:
 ```sql
 SELECT
     EXTRACT(YEAR FROM date) AS year,
@@ -325,14 +306,11 @@ The output offers the following top 4 insights
 
 - **2023:** In 2023, the infection rate reached its lowest point at 0.000, indicating no reported infections during that year. This suggests a remarkable achievement in controlling the spread of COVID-19, possibly due to high vaccination coverage, effective public health interventions, and the development of immunity within the population.
 
-
 Overall, the data demonstrates a trend of declining infection rates over the years, reflecting successful efforts in controlling the spread of COVID-19 and mitigating its impact on public health.
-
 
 ## 3. Likelihood of Infection By Months of Year
 
-To gain highlight the varying levels of transmission of COVID-19 across different months, with peaks and troughs reflecting fluctuations in infection rates over time the following SQL query was developed and executed.
-In the query, the "month_number" column was extracted which was later on used for sorting the "month" column for effective visualization.
+To highlight the varying levels of transmission of COVID-19 across different months, reflecting fluctuations in infection rates over time, the following SQL query was developed and executed:
 
 ```sql
 SELECT
@@ -395,9 +373,7 @@ ORDER BY
 
 - **April (Apr):** April had a relatively low infection rate at 0.041, indicating a decrease in transmission compared to the previous months. This could be attributed to the implementation of public health measures and interventions aimed at reducing the spread of the virus.
 
-
-Overall, the data demonstrates a trend of declining infection rates over the years, reflecting successful efforts in controlling the spread of COVID-19 and mitigating its impact on public health.
-
+Overall, the data demonstrates the fluctuations in COVID-19 infection rates across different months, reflecting the impact of various public health measures and seasonal factors on the transmission of the virus.
 
 
 ## 4. Likelihood of Infection By Quarter of Year
@@ -1508,8 +1484,17 @@ The infection rate in the case of Oceania is the lowest among all the continents
 
 6. **Vaccination by Location:** The low-income countries have the lowest percentage of population infected as compared to the high or middle-income countries. This may be because the high-income countries had greater access to the vaccines or the dearth of health facilities may have contributed to lower vaccination rates.
 
-### Closing Thoughts
 
-This project enhanced my SQL skills and provided valuable insights into the COVID-19 pandemic. The insights obtained may help the stakeholders to make informed decisions. 
+# Closing Thoughts
+
+My SQL project on COVID-19 offers a comprehensive analysis of various aspects of the pandemic, providing valuable insights into the likelihood of infection, mortality rates, vaccination trends, and more across different geographic locations and income groups. By addressing a wide range of research questions using SQL queries, I have shed light on critical issues related to the spread and impact of COVID-19.
+
+The findings of the project, highlight the disparities in infection rates, mortality rates, and vaccination coverage between countries, continents, and income groups, underscoring the complex interplay of factors influencing the course of the pandemic. From the high likelihood of dying in low-income countries to the uneven distribution of vaccinations, your analysis paints a nuanced picture of the global response to COVID-19.
+
+The project not only demonstrates proficiency in SQL but also showcases my ability to derive meaningful insights from complex datasets. By leveraging tools like PostgreSQL and Microsoft Power BI, I have effectively visualized the findings, making them more accessible and understandable.
+
+# Conclusion
+This project on COVID-19 serves as a valuable resource for understanding the multifaceted nature of the pandemic and its implications for public health policy and decision-making. It reflects a rigorous analytical approach and a commitment to providing data-driven insights that can inform strategies for mitigating the impact of COVID-19 on a global scale.
+
 
 
