@@ -14,6 +14,7 @@ This analysis aims to examine COVID-19 deaths and vaccinations to unearth valuab
 The data can be downloaded from the following links:
 
 [Covid_deaths](https://1x1kjh-my.sharepoint.com/:x:/r/personal/kenpeter_1x1kjh_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B175CAB08-134A-4EA3-B4DE-E22DB191A56C%7D&file=covid_deaths.csv&action=default&mobileredirect=true)
+
 [Covid_vacci](https://1x1kjh-my.sharepoint.com/:x:/r/personal/kenpeter_1x1kjh_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B00E4300F-B9EA-4269-A930-7A763F9A3587%7D&file=covid_vacci.csv&action=default&mobileredirect=true).
 
 The dataset includes information on deaths, vaccinations, and other metrics by country, region/continent, and income grouping from 2020 to 2023.
